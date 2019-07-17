@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_attach_money_black_24dp"
+            android:title="Siirrä rahaa" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_add_black_24dp"
+            android:title="Lisää rahaa" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_money_off_black_24dp"
+            android:title="Nosta rahaa" />
+        <item
+            android:id="@+id/nav"
+            android:icon="@drawable/ic_credit_card_black_24dp"
+            android:title="Luo tili" />
+    </group>
+
+    <item android:title="Hallinta">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_power_settings_new_black_24dp"
+                android:title="Kirjaudu ulos" />
+            <item
+                android:id="@+id/nav_tools"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Asetukset" />
+        </menu>
+    </item>
+
+</menu>
