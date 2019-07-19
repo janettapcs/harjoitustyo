@@ -9,14 +9,21 @@ public class Bank {
     private String address;
     private String country;
 
-    ArrayList<User> userList;
+    static ArrayList<User> userList = new ArrayList<User>();
 
-    public Bank(int id, String name, String address, String country, ArrayList<User> userList) {
+    private static final Bank bankInstance = new Bank(1, "Bank", "Address 1", "Finland");
+
+    public static Bank getInstance() {
+        return bankInstance;
+    }
+
+    private Bank(int id, String name, String address, String country) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.country = country;
-        this.userList = userList;
+        userList.add(new User("test", "test@gmail.com", "password"));
+        Session.setUser("test");
     }
 
     public int getId() {
@@ -36,6 +43,7 @@ public class Bank {
     }
 
     public ArrayList<User> getUserList() {
+
         return userList;
     }
 
@@ -55,4 +63,45 @@ public class Bank {
     public void setUserList(ArrayList<User> userList) {
         this.userList = userList;
     }
+
+    public boolean createAccount(String accountNumberText, String limitText, String userName ){
+        ArrayList<User> userList = this.getUserList();
+        User user = null;
+        int i;
+        for (i = 0; i < userList.size(); i++) {
+            user = userList.get(i);
+            if (user.getUsername().equals(userName)) { break; }
+        }
+        int intLimit;
+        intLimit = Utilities.strToInt(limitText);
+        Account newAccount = new Account(accountNumberText, 0, intLimit);
+        user.getAccountList().add(newAccount);
+        System.out.println("account created. accountname: " + accountNumberText);
+        return true;
+    }
+
+    public boolean addMoney(String accountNumberText, String amountText, String message) {
+        ArrayList<User> userList = this.getUserList();
+        User user = null;
+        int i;
+        for (i = 0; i < userList.size(); i++) {
+            user = userList.get(i);
+            if (user.getUsername().equals(Session.getUser())) { break; }
+        }
+        ArrayList<Account> accountList = user.getAccountList();
+        Account account = null;
+        int j;
+        for (j=0; j < accountList.size(); j++) {
+            account = accountList.get(i);
+            if (account.getNumber().equals(accountNumberText)) {
+                int amount = Utilities.strToInt(amountText);
+                int newBalance = account.getBalance() + amount;
+                account.setBalance(newBalance);
+                System.out.println("balance added to account " + account.getNumber() + "new balance: " + account.getBalance());
+            }
+        }
+        return true;
+    }
+
+
 }

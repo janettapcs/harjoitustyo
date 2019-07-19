@@ -47,30 +47,6 @@
             android:paddingLeft="24dp"
             android:paddingRight="24dp">
 
-            <EditText
-                android:id="@+id/firstName"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:ems="10"
-                android:inputType="text"
-                android:text="Etunimi:" />
-
-
-            <EditText
-                android:id="@+id/lastName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="text"
-                android:text="Sukunimi:" />
-
-            <EditText
-                android:id="@+id/identityNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="text"
-                android:text="Henkilötunnus:" />
 
             <EditText
                 android:id="@+id/accountNumber"
@@ -97,7 +73,8 @@
                 android:layout_marginBottom="24dp"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:text="Luo tili"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:onClick="createAccount"/>
         </LinearLayout>
 
     </LinearLayout>

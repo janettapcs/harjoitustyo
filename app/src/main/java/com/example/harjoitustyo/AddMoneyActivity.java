@@ -11,7 +11,6 @@ public class AddMoneyActivity extends AppCompatActivity {
     EditText target;
     EditText quantity;
     EditText message;
-    EditText source;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,19 +18,17 @@ public class AddMoneyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_money);
 
         target = findViewById(R.id.target);
-        source = findViewById(R.id.source);
+
         quantity = findViewById(R.id.quantity);
         message = findViewById(R.id.message);
     }
 
-    public void onClick(View v) {
-        System.out.println("helouu");
-    }
-
     public void addMoney(View v){
-        int amount;
+        String targetText = target.getText().toString();
+        String quantityText = quantity.getText().toString();
+        String messageText = message.getText().toString();
 
-
+        Bank.getInstance().addMoney(targetText, quantityText, messageText);
 
     }
 }
