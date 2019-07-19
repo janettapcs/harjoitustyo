@@ -7,13 +7,23 @@ public class AccountEvent {
     private String target;
     private int quantity;
     private String type;
+    private String message;
 
-    public AccountEvent(int id, String source, String target, int quantity, String type) {
+    public AccountEvent(int id, String source, String target, int quantity, String type, String message) {
         this.id = id;
         this.source = source;
         this.target = target;
         this.quantity = quantity;
         this.type = type;
+        this.message = message;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public int getId() {

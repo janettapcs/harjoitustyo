@@ -1,5 +1,6 @@
 package com.example.harjoitustyo;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -20,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -85,15 +87,25 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.add) {
+            startActivity(new Intent(MainActivity.this, AddMoneyActivity.class));
+        } else if (id == R.id.transfer) {
+            startActivity(new Intent(MainActivity.this, TransferMoneyActivity.class));
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.dec) {
+            startActivity(new Intent(MainActivity.this, DecMoneyActivity.class));
 
-        } else if (id == R.id.nav_tools) {
+        } else if (id == R.id.create) {
+            System.out.println("123");
+            startActivity(new Intent(MainActivity.this, CreateAccountActivity.class));
+            System.out.println("heippaaa");
 
-        } else if (id == R.id.nav_share) {
+        }
+        else if (id == R.id.accountDetails) {
+            startActivity(new Intent(MainActivity.this, AccountDetailsActivity.class));
+
+        }
+        else if (id == R.id.nav_share) {
 
         }
 

@@ -5,19 +5,19 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/transfer"
             android:icon="@drawable/ic_attach_money_black_24dp"
             android:title="Siirrä rahaa" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/add"
             android:icon="@drawable/ic_add_black_24dp"
             android:title="Lisää rahaa" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/dec"
             android:icon="@drawable/ic_money_off_black_24dp"
             android:title="Nosta rahaa" />
         <item
-            android:id="@+id/nav"
+            android:id="@+id/create"
             android:icon="@drawable/ic_credit_card_black_24dp"
             android:title="Luo tili" />
     </group>
@@ -25,13 +25,13 @@
     <item android:title="Hallinta">
         <menu>
             <item
+                android:id="@+id/accountDetails"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Tilitiedot" />
+            <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_power_settings_new_black_24dp"
                 android:title="Kirjaudu ulos" />
-            <item
-                android:id="@+id/nav_tools"
-                android:icon="@drawable/ic_menu_manage"
-                android:title="Asetukset" />
         </menu>
     </item>
 
