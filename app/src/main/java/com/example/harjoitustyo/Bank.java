@@ -105,7 +105,6 @@ public class Bank {
     }
 
     public boolean decMoney(String accountNumberText, String amountText) {
-        System.out.println("decmoney bank");
         ArrayList<User> userList = this.getUserList();
         User user = null;
         int i;

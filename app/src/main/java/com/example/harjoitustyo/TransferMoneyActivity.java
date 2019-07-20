@@ -27,7 +27,6 @@ public class TransferMoneyActivity extends AppCompatActivity {
     }
 
     public void transferMoney(View v){
-        System.out.println("Hello from transferMoney");
         String targetText = target.getText().toString();
         String sourceText = source.getText().toString();
         String amountText = amount.getText().toString();

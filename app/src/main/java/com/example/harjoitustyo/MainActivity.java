@@ -96,9 +96,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(MainActivity.this, DecMoneyActivity.class));
 
         } else if (id == R.id.create) {
-            System.out.println("123");
             startActivity(new Intent(MainActivity.this, CreateAccountActivity.class));
-            System.out.println("heippaaa");
 
         }
         else if (id == R.id.accountDetails) {

@@ -22,7 +22,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="468dp"
+        android:layout_height="339dp"
         android:gravity="center"
         android:orientation="vertical"
         android:paddingLeft="24dp"
@@ -31,14 +31,14 @@
         <EditText
             android:id="@+id/sourceTrans"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text"
-            android:text="Tililtä:" />
+            android:hint="Tililtä:"
+            android:inputType="text" />
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Saajan tiedot"
             android:textColor="@android:color/black"
@@ -49,33 +49,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text"
-            android:hint="Nimi:" />
+            android:hint="Nimi:"
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/targetTrans"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text"
-            android:hint="Tilinumero:" />
+            android:hint="Tilinumero:"
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/amountTrans"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text"
-            android:hint="Määrä:" />
+            android:hint="Määrä:"
+            android:inputType="text" />
 
         <Button
             android:id="@+id/click"
-            android:onClick="transferMoney"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="0dp"
             android:layout_marginBottom="24dp"
             android:backgroundTint="@color/colorPrimaryDark"
+            android:onClick="transferMoney"
             android:text="Vahvista"
             android:textColor="@android:color/white" />
 

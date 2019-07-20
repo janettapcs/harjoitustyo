@@ -23,7 +23,6 @@ public class DecMoneyActivity extends AppCompatActivity {
     }
 
     public void decMoney(View v){
-        System.out.println("decmoney");
         String targetText = target.getText().toString();
         String quantityText = quantity.getText().toString();
 

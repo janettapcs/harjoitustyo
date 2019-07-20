@@ -41,7 +41,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="439dp"
+            android:layout_height="276dp"
             android:gravity="center"
             android:orientation="vertical"
             android:paddingLeft="24dp"
@@ -53,9 +53,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="text"
                 android:hint="Tilinumero:"
-                android:imeOptions="actionDone"/>
+                android:imeOptions="actionDone"
+                android:inputType="text" />
 
 
             <EditText
@@ -63,8 +63,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="text"
-                android:hint="Maksuraja:" />
+                android:hint="Maksuraja:"
+                android:inputType="text" />
 
 
             <Button
@@ -73,9 +73,9 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"
                 android:backgroundTint="@color/colorPrimaryDark"
+                android:onClick="createAccount"
                 android:text="Luo tili"
-                android:textColor="@android:color/white"
-                android:onClick="createAccount"/>
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
     </LinearLayout>
