@@ -2,7 +2,9 @@ package com.example.harjoitustyo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
 public class TransferMoneyActivity extends AppCompatActivity {
@@ -24,10 +26,14 @@ public class TransferMoneyActivity extends AppCompatActivity {
         amount = findViewById(R.id.amountTrans);
     }
 
-    public void transferMoney(){
+    public void transferMoney(View v){
+        System.out.println("Hello from transferMoney");
         String targetText = target.getText().toString();
         String sourceText = source.getText().toString();
         String amountText = amount.getText().toString();
         String nameText = name.getText().toString();
+
+        Bank.getInstance().transMoney(targetText, sourceText, amountText);
+        startActivity(new Intent(TransferMoneyActivity.this, MainActivity.class));
     }
 }
