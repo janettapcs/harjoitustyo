@@ -48,21 +48,21 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:text="Nimi:" />
+            android:hint="Nimi:" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:text="Tilinumero:" />
+            android:hint="Tilinumero:" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:text="Määrä:" />
+            android:hint="Määrä:" />
 
         <Button
             android:layout_width="match_parent"

@@ -54,7 +54,7 @@
                     android:layout_height="65dp"
                     android:ems="10"
                     android:inputType="text"
-                    android:text="Tilille:" />
+                    android:hint="Tilille:" />
 
 
                 <EditText
@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="text"
-                    android:text="Määrä:" />
+                    android:hint="Määrä:" />
 
                 <EditText
                     android:id="@+id/message"
@@ -71,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="text"
-                    android:text="Viesti:" />
+                    android:hint="Viesti:" />
 
 
                 <Button

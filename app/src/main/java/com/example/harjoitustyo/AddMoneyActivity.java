@@ -2,6 +2,7 @@ package com.example.harjoitustyo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -29,6 +30,7 @@ public class AddMoneyActivity extends AppCompatActivity {
         String messageText = message.getText().toString();
 
         Bank.getInstance().addMoney(targetText, quantityText, messageText);
+        startActivity(new Intent(AddMoneyActivity.this, MainActivity.class));
 
     }
 }

@@ -54,7 +54,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                android:text="Tilinumero:" />
+                android:hint="Tilinumero:"
+                android:imeOptions="actionDone"/>
 
 
             <EditText
@@ -63,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                android:text="Maksuraja:" />
+                android:hint="Maksuraja:" />
 
 
             <Button

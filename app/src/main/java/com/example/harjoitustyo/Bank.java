@@ -92,14 +92,44 @@ public class Bank {
         Account account = null;
         int j;
         for (j=0; j < accountList.size(); j++) {
-            account = accountList.get(i);
+            account = accountList.get(j);
             if (account.getNumber().equals(accountNumberText)) {
                 int amount = Utilities.strToInt(amountText);
                 int newBalance = account.getBalance() + amount;
                 account.setBalance(newBalance);
                 System.out.println("balance added to account " + account.getNumber() + "new balance: " + account.getBalance());
+                return true;
             }
         }
+        return false;
+    }
+
+    public boolean decMoney(String accountNumberText, String amountText) {
+        System.out.println("decmoney bank");
+        ArrayList<User> userList = this.getUserList();
+        User user = null;
+        int i;
+        for (i = 0; i < userList.size(); i++) {
+            user = userList.get(i);
+            if (user.getUsername().equals(Session.getUser())) { break; }
+        }
+        ArrayList<Account> accountList = user.getAccountList();
+        Account account = null;
+        int j;
+        for (j=0; j < accountList.size(); j++) {
+            account = accountList.get(j);
+            if (account.getNumber().equals(accountNumberText)) {
+                int amount = Utilities.strToInt(amountText);
+                int newBalance = account.getBalance() - amount;
+                account.setBalance(newBalance);
+                System.out.println("balance added to account " + account.getNumber() + "new balance: " + account.getBalance());
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean transMoney(String source, String name, String target, String amount ){
+
         return true;
     }
 

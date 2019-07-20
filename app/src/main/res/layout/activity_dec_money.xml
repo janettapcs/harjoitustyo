@@ -45,22 +45,26 @@
                 android:paddingRight="24dp">
 
                 <EditText
+                    android:id="@+id/client"
                     android:layout_width="match_parent"
                     android:layout_height="65dp"
                     android:ems="10"
                     android:inputType="text"
-                    android:text="Tililtä:" />
+                    android:hint="Tililtä:" />
 
 
                 <EditText
+                    android:id="@+id/amount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="text"
-                    android:text="Määrä:" />
+                    android:hint="Määrä:" />
 
 
                 <Button
+                    android:id="@+id/click"
+                    android:onClick="decMoney"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
