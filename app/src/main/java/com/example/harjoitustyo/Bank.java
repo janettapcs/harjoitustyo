@@ -80,7 +80,7 @@ public class Bank {
         return true;
     }
 
-    public boolean addMoney(String accountNumberText, String amountText, String message) {
+    public boolean addMoney(String accountNumberText, String amountText) {
         ArrayList<User> userList = this.getUserList();
         User user = null;
         int i;
@@ -128,8 +128,10 @@ public class Bank {
         }
         return false;
     }
-    public boolean transMoney(String source, String name, String target, String amount ){
+    public boolean transMoney(String source, String target, String amount ){
 
+        this.decMoney(source, amount);
+        this.addMoney(target, amount);
         return true;
     }
 

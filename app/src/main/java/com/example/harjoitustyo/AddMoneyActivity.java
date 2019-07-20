@@ -29,7 +29,7 @@ public class AddMoneyActivity extends AppCompatActivity {
         String quantityText = quantity.getText().toString();
         String messageText = message.getText().toString();
 
-        Bank.getInstance().addMoney(targetText, quantityText, messageText);
+        Bank.getInstance().addMoney(targetText, quantityText);
         startActivity(new Intent(AddMoneyActivity.this, MainActivity.class));
 
     }
