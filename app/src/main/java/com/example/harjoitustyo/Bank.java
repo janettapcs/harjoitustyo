@@ -1,5 +1,8 @@
 package com.example.harjoitustyo;
 
+import android.app.Application;
+import android.content.Context;
+
 import java.util.ArrayList;
 
 public class Bank {
@@ -8,6 +11,7 @@ public class Bank {
     private String name;
     private String address;
     private String country;
+    public Context context;
 
     static ArrayList<User> userList = new ArrayList<User>();
 
@@ -24,6 +28,7 @@ public class Bank {
         this.country = country;
         userList.add(new User("test", "test@gmail.com", "password"));
         Session.setUser("test");
+        this.context = harjoitustyo.getAppContext();
     }
 
     public int getId() {
@@ -77,6 +82,8 @@ public class Bank {
         Account newAccount = new Account(accountNumberText, 0, intLimit);
         user.getAccountList().add(newAccount);
         System.out.println("account created. accountname: " + accountNumberText);
+        AccountEvent event = new AccountEvent("Account creation", accountNumberText);
+        SaveEvent.getInstance().saveJson(event, this.context);
         return true;
     }
 
@@ -121,7 +128,7 @@ public class Bank {
                 int amount = Utilities.strToInt(amountText);
                 int newBalance = account.getBalance() - amount;
                 account.setBalance(newBalance);
-                System.out.println("balance added to account " + account.getNumber() + "new balance: " + account.getBalance());
+                System.out.println("balance removed from account " + account.getNumber() + "new balance: " + account.getBalance());
                 return true;
             }
         }
@@ -131,6 +138,11 @@ public class Bank {
 
         this.decMoney(source, amount);
         this.addMoney(target, amount);
+        return true;
+    }
+
+    public boolean transMoneyToOther(String source, String amount ){
+        this.decMoney(source, amount);
         return true;
     }
 

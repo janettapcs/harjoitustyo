@@ -7,7 +7,13 @@
         <item
             android:id="@+id/transfer"
             android:icon="@drawable/ic_attach_money_black_24dp"
-            android:title="Siirrä rahaa" />
+            android:title="Siirrä rahaa omalle tiille" />
+
+        <item
+            android:id="@+id/transferToOther"
+            android:icon="@drawable/ic_attach_money_black_24dp"
+            android:title="Tilisiirto ulkopuoliselle tilille" />
+
         <item
             android:id="@+id/add"
             android:icon="@drawable/ic_add_black_24dp"

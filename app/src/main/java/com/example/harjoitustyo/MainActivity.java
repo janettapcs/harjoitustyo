@@ -21,7 +21,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
-import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -103,6 +102,11 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(MainActivity.this, AccountDetailsActivity.class));
 
         }
+
+        else if (id == R.id.transferToOther) {
+            startActivity(new Intent(MainActivity.this, TransferToOtherActivity.class));
+        }
+
         else if (id == R.id.nav_share) {
 
         }

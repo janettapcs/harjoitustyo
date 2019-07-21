@@ -2,20 +2,38 @@ package com.example.harjoitustyo;
 
 public class AccountEvent {
 
-    private int id;
     private String source;
     private String target;
-    private int quantity;
+    private String quantity;
     private String type;
     private String message;
+    private String name;
 
-    public AccountEvent(int id, String source, String target, int quantity, String type, String message) {
-        this.id = id;
+    public AccountEvent(String source, String target, String quantity, String type, String message) {
+
         this.source = source;
         this.target = target;
         this.quantity = quantity;
         this.type = type;
         this.message = message;
+    }
+
+    public AccountEvent(String target, String quantity, String type) {
+        this.target = target;
+        this.quantity = quantity;
+        this.type = type;
+    }
+
+    public AccountEvent(String source, String target, String quantity, String type) {
+        this.source = source;
+        this.target = target;
+        this.quantity = quantity;
+        this.type = type;
+    }
+
+    public AccountEvent(String type, String name) {
+        this.type = type;
+        this.name = name;
     }
 
     public String getMessage() {
@@ -26,9 +44,6 @@ public class AccountEvent {
         this.message = message;
     }
 
-    public int getId() {
-        return id;
-    }
 
     public String getSource() {
         return source;
@@ -38,16 +53,12 @@ public class AccountEvent {
         return target;
     }
 
-    public int getQuantity() {
+    public String getQuantity() {
         return quantity;
     }
 
     public String getType() {
         return type;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public void setSource(String source) {
@@ -58,7 +69,7 @@ public class AccountEvent {
         this.target = target;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
 
