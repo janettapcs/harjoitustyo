@@ -29,6 +29,8 @@ public class CreateAccountActivity extends AppCompatActivity {
         String limitText = limit.getText().toString();
 
         Bank.getInstance().createAccount(accountNumberText, limitText, Session.getUser());
+        AccountEvent event = new AccountEvent("Account creation", accountNumberText);
+        SaveEvent.getInstance().saveJson(event, getApplicationContext());
 
         startActivity(new Intent(CreateAccountActivity.this, MainActivity.class));
 

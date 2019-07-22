@@ -2,10 +2,12 @@ package com.example.harjoitustyo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class TransferMoneyActivity extends AppCompatActivity {
 
@@ -13,6 +15,8 @@ public class TransferMoneyActivity extends AppCompatActivity {
     EditText source;
     EditText amount;
     EditText name;
+
+    Toast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +28,12 @@ public class TransferMoneyActivity extends AppCompatActivity {
 
         source = findViewById(R.id.sourceTrans);
         amount = findViewById(R.id.amountTrans);
+
+        Context context = getApplicationContext();
+        CharSequence text = "Tilillä ei ole tarpeeksi katetta. Lisää rahaa.";
+        int duration = Toast.LENGTH_LONG;
+
+        toast = Toast.makeText(context, text, duration);
     }
 
     public void transferMoney(View v){
@@ -32,7 +42,16 @@ public class TransferMoneyActivity extends AppCompatActivity {
         String amountText = amount.getText().toString();
         String nameText = name.getText().toString();
 
-        Bank.getInstance().transMoney(targetText, sourceText, amountText);
-        startActivity(new Intent(TransferMoneyActivity.this, MainActivity.class));
+
+        boolean transferSuccess = Bank.getInstance().transMoney(targetText, sourceText, amountText);
+        if(!transferSuccess) {
+            toast.show();
+        } else {
+            AccountEvent event = new AccountEvent(sourceText, targetText, amountText, "Money transfer to own account.");
+            SaveEvent.getInstance().saveJson(event, getApplicationContext());
+
+            startActivity(new Intent(TransferMoneyActivity.this, MainActivity.class));
+        }
+
     }
 }

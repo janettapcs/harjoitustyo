@@ -30,6 +30,9 @@ public class AddMoneyActivity extends AppCompatActivity {
         String messageText = message.getText().toString();
 
         Bank.getInstance().addMoney(targetText, quantityText);
+        AccountEvent event = new AccountEvent(targetText, quantityText, "Money deposit");
+        SaveEvent.getInstance().saveJson(event, getApplicationContext());
+
         startActivity(new Intent(AddMoneyActivity.this, MainActivity.class));
 
     }
