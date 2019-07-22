@@ -28,7 +28,7 @@ public class Bank {
         this.country = country;
         userList.add(new User("test", "test@gmail.com", "password"));
         Session.setUser("test");
-        this.context = harjoitustyo.getAppContext();
+        //this.context = harjoitustyo.getAppContext();
     }
 
     public int getId() {
