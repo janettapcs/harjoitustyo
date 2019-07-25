@@ -21,6 +21,7 @@ public class SaveEvent {
     private SaveEvent() {
     }
 
+    /*Saves account transactions in json file format. Data is saved into device file explorer's default saving location */
     public boolean saveJson(AccountEvent event, Context context) {
 
         Gson gson = new Gson();

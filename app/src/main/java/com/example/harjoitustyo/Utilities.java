@@ -2,6 +2,7 @@ package com.example.harjoitustyo;
 
 public class Utilities {
 
+    /*Converts a String to an int data type*/
     public static int strToInt(String value){
 
         try {

@@ -20,7 +20,6 @@ public class CreateAccountActivity extends AppCompatActivity {
 
         limit = findViewById(R.id.limit);
         accountNumber = findViewById(R.id.accountNumber);
-        System.out.println("heippa");
     }
 
     public void createAccount(View v) {

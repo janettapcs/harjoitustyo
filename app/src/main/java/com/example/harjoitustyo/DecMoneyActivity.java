@@ -32,6 +32,7 @@ public class DecMoneyActivity extends AppCompatActivity {
         toast = Toast.makeText(context, text, duration);
     }
 
+    /*saves user inputs to variables and calls decMoney function from Bank class*/
     public void decMoney(View v){
         String targetText = target.getText().toString();
         String quantityText = quantity.getText().toString();

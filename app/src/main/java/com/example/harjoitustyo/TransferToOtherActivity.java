@@ -35,13 +35,12 @@ public class TransferToOtherActivity extends AppCompatActivity {
         toast = Toast.makeText(context, text, duration);
     }
 
+    /*saves user inputs to variables and calls transMoneyToOther function from Bank class*/
     public void transferMoneyToOtherAccount(View v){
         String targetText = target.getText().toString();
         String sourceText = source.getText().toString();
         String amountText = amount.getText().toString();
         String nameText = name.getText().toString();
-
-
 
         boolean transferSuccess = Bank.getInstance().transMoneyToOther(sourceText, amountText);
         if(!transferSuccess) {

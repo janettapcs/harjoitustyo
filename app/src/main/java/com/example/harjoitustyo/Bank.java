@@ -11,10 +11,13 @@ public class Bank {
     private String address;
     private String country;
 
+    /*User list*/
     static ArrayList<User> userList = new ArrayList<User>();
 
+    /*Hard coding bank details*/
     private static final Bank bankInstance = new Bank(1, "Bank", "Address 1", "Finland");
 
+    /*Singleton pattern that restricts the instantiation of bank class to one instance*/
     public static Bank getInstance() {
         return bankInstance;
     }
@@ -24,6 +27,7 @@ public class Bank {
         this.name = name;
         this.address = address;
         this.country = country;
+        /*hard coding user details*/
         userList.add(new User("test", "test@gmail.com", "password"));
         Session.setUser("test");
 
@@ -79,10 +83,11 @@ public class Bank {
         intLimit = Utilities.strToInt(limitText);
         Account newAccount = new Account(accountNumberText, 0, intLimit);
         user.getAccountList().add(newAccount);
-        System.out.println("account created. accountname: " + accountNumberText);
+        System.out.println("Account created. account name: " + accountNumberText);
         return true;
     }
 
+    /*Checks whether a user and account exists. Adds defined amount to the account balance*/
     public boolean addMoney(String accountNumberText, String amountText) {
         ArrayList<User> userList = this.getUserList();
         User user = null;
@@ -100,13 +105,13 @@ public class Bank {
                 int amount = Utilities.strToInt(amountText);
                 int newBalance = account.getBalance() + amount;
                 account.setBalance(newBalance);
-                System.out.println("balance added to account " + account.getNumber() + "new balance: " + account.getBalance());
+                System.out.println("Balance added to account " + account.getNumber() + "new balance: " + account.getBalance());
                 return true;
             }
         }
         return false;
     }
-
+    /*Checks whether a user and account exists. Removes defined amount from the account balance*/
     public boolean decMoney(String accountNumberText, String amountText) {
         ArrayList<User> userList = this.getUserList();
         User user = null;
@@ -134,6 +139,8 @@ public class Bank {
         }
         return false;
     }
+
+    /*Makes account transfers to existing accounts*/
     public boolean transMoney(String source, String target, String amount ){
         boolean decMoneySuccess = this.decMoney(source, amount);
         if(!decMoneySuccess) {
@@ -143,7 +150,7 @@ public class Bank {
         return true;
         }
     }
-
+    /*External account transfer*/
     public boolean transMoneyToOther(String source, String amount ){
         return this.decMoney(source, amount);
     }

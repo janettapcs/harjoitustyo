@@ -15,7 +15,7 @@
 
 
         <LinearLayout
-            android:paddingTop="35dp"
+            android:paddingTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -24,7 +24,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:text="Luo tili"
                 android:textColor="@android:color/black"
                 android:textSize="35dp" />
@@ -41,7 +41,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="276dp"
+            android:layout_height="227dp"
             android:gravity="center"
             android:orientation="vertical"
             android:paddingLeft="24dp"
@@ -70,7 +70,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="24dp"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:onClick="createAccount"

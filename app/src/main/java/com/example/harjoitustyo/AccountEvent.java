@@ -18,19 +18,20 @@ public class AccountEvent {
         this.message = message;
     }
 
+    /*Different type of constructor depending on need*/
     public AccountEvent(String target, String quantity, String type) {
         this.target = target;
         this.quantity = quantity;
         this.type = type;
     }
-
+    /*Different type of constructor depending on need*/
     public AccountEvent(String source, String target, String quantity, String type) {
         this.source = source;
         this.target = target;
         this.quantity = quantity;
         this.type = type;
     }
-
+    /*Different type of constructor depending on need*/
     public AccountEvent(String type, String name) {
         this.type = type;
         this.name = name;

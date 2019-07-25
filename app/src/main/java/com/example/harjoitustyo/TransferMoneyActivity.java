@@ -36,6 +36,7 @@ public class TransferMoneyActivity extends AppCompatActivity {
         toast = Toast.makeText(context, text, duration);
     }
 
+    /*saves user inputs to variables and calls transMoney function from Bank class*/
     public void transferMoney(View v){
         String targetText = target.getText().toString();
         String sourceText = source.getText().toString();

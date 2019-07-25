@@ -14,9 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Uusi maksu ulkopuoliselle tilille"
-
-
+            android:text="Uusi maksu"
             android:textColor="@android:color/black"
             android:textSize="17.5dp" />
 
